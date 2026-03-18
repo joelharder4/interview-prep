@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="640" height="420" viewBox="0 0 640 420">
+<desc>Created with SVGMaker Editor 3.0.0</desc>
+<defs>
+</defs>
+<rect transform="translate(0,0)" style="stroke: rgb(255,255,255); stroke-opacity: 0; fill: rgb(238,246,255)" x="0" y="0" rx="24" ry="24" width="640" height="420"/>
+<path transform="translate(0,0)" style="stroke: rgb(255,255,255); stroke-opacity: 0; fill: rgb(255,212,59)" stroke-linecap="round" d="M379.0996 381.024C421.0996 381.024 457.0996 365.024 457.0996 331.024L457.0996 297.024 301.0996 297.024 301.0996 287.024 493.0996 287.024C517.0996 287.024 537.0996 267.024 537.0996 243.024L537.0996 159.024C537.0996 135.024 517.0996 115.024 493.0996 115.024L445.0996 115.024 444.5529 152.2976C444.2353 188.5681 413.0135 218.9028 378.3351 218.2723L300.7815 218.5875C264.5268 218.5875 244.035 235.2962 243.7197 261.4627L243.7197 330.8196C243.0996 365.024 273.0996 381.024 315.0996 381.024L379.0996 381.024Z"/>
+<path transform="translate(0,0)" style="stroke: rgb(255,255,255); stroke-opacity: 0; fill: rgb(55,118,171)" stroke-linecap="round" d="M302 56C260 56 224 72 224 106L224 140 380 140 380 150 188 150C164 150 144 170 144 194L144 278C144 302 164 322 188 322L236 322 236 252C236.784 220.7944 267.3641 210.0756 294.7916 210.0756L377.7046 209.4451C413.3805 209.6728 438.0021 175.7898 438 130L438 106C438 72 408 56 366 56L302 56Z"/>
+<circle transform="translate(0,0)" style="stroke: rgb(255,255,255); stroke-opacity: 0; fill: rgb(255,255,255)" cx="276" cy="92" r="10"/>
+<circle transform="translate(0,0)" style="stroke: rgb(255,255,255); stroke-opacity: 0; fill: rgb(74,58,0)" cx="405.0996" cy="345.024" r="10"/>
+</svg>
