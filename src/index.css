@@ -1,18 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap');
+@import 'tailwindcss';
 
 :root {
-  --bg: #f9f7f3;
-  --text: #1f2937;
-  --muted: #556274;
-  --line: #d9d8d0;
-  --card-surface: #fffcf7;
-  --accent: #0f766e;
-  --sans: 'Space Grotesk', 'Trebuchet MS', sans-serif;
-  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --bg: #f5f4f0;
+  --surface: #fffdf8;
+  --line: #d7d3c8;
+  --text: #1f2630;
+  --muted: #5d6673;
+  --accent: #235b72;
+  --accent-soft: #d9ecf4;
+  --theory-bg: #ece7df;
+  --theory-text: #544534;
+  --practice-bg: #dbece5;
+  --practice-text: #255246;
+  --radius-card: 18px;
+  --shadow-card: 0 12px 28px rgba(18, 27, 38, 0.08);
+  --sans: 'Manrope', 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', 'Consolas', monospace;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
 body {
@@ -20,28 +34,71 @@ body {
   font-family: var(--sans);
   color: var(--text);
   background:
-    radial-gradient(circle at 8% 10%, rgba(217, 244, 239, 0.8), rgba(217, 244, 239, 0) 28%),
-    radial-gradient(circle at 85% 12%, rgba(255, 232, 207, 0.8), rgba(255, 232, 207, 0) 30%),
+    radial-gradient(circle at 10% 10%, rgba(218, 236, 224, 0.7), rgba(218, 236, 224, 0) 31%),
+    radial-gradient(circle at 86% 8%, rgba(231, 226, 213, 0.7), rgba(231, 226, 213, 0) 34%),
     var(--bg);
-  min-height: 100vh;
-}
-
-#root {
-  min-height: 100vh;
-}
-
-h1,
-h2,
-p {
-  margin: 0;
-}
-
-h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  line-height: 1.03;
-  letter-spacing: -0.03em;
 }
 
 a {
   color: inherit;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.kind-chip {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.kind-chip.theory {
+  background: var(--theory-bg);
+  color: var(--theory-text);
+}
+
+.kind-chip.practice {
+  background: var(--practice-bg);
+  color: var(--practice-text);
+}
+
+.surface-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.soft-focus:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 45%, white);
+  outline-offset: 2px;
 }

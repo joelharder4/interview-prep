@@ -7,17 +7,25 @@ type GenericSectionPageProps = {
 
 export function GenericSectionPage({ section }: GenericSectionPageProps) {
   return (
-    <main className="section-page">
-      <div className="section-shell">
-        <div className="page-topbar">
-          <Link to="/" className="home-pill" aria-label="Back to home">
+    <main className="page-shell pb-16 pt-10 md:pt-12">
+      <div className="surface-card p-4 md:p-6">
+        <div className="mb-4">
+          <Link to="/" className="home-link soft-focus" aria-label="Back to home">
             Home
           </Link>
         </div>
-        <img src={section.image} alt={`${section.title} artwork`} className="section-cover" />
-        <span className={`chip ${section.kind.toLowerCase()}`}>{section.kind}</span>
-        <h1>{section.title}</h1>
-        <p>{getSectionMessage(section)}</p>
+        <img
+          src={section.image}
+          alt={`${section.title} artwork`}
+          className="aspect-[16/9] w-full rounded-2xl border border-[var(--line)] bg-[#eef1f3] p-2 object-contain"
+        />
+        <span className={`kind-chip mt-4 ${section.kind.toLowerCase()}`}>{section.kind}</span>
+        <h1 className="mt-3 text-[clamp(1.7rem,4.2vw,2.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-[var(--text)]">
+          {section.title}
+        </h1>
+        <p className="mt-3 max-w-[70ch] text-[0.95rem] leading-7 text-[var(--muted)]">
+          {getSectionMessage(section)}
+        </p>
       </div>
     </main>
   )
