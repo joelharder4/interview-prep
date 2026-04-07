@@ -1,0 +1,28 @@
+<svg width="720" height="220" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="arrow" markerWidth="6" markerHeight="6" viewBox="0 0 10 10" refX="7.5" refY="5" orient="auto-start-reverse">
+   <path d="m0,0l10,5l-10,5l0,-10z" fill="#475569" id="svg_1"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text x="360" y="24" text-anchor="middle" font-size="12" fill="#334155" id="svg_2">Arrows represent contracts between boundaries, not shared database access.</text>
+  <g id="svg_18">
+   <rect x="15.77902" y="52.43137" width="188" height="96" rx="14" fill="#dbeafe" stroke="#60a5fa" id="svg_3"/>
+   <text x="109.77902" y="88.43137" text-anchor="middle" font-size="13" fill="#1e3a8a" id="svg_4">User Domain</text>
+   <text x="109.77902" y="108.43137" text-anchor="middle" font-size="11" fill="#1e3a8a" id="svg_5">auth, profile, session</text>
+   <rect x="250.54615" y="52.43137" width="188" height="96" rx="14" fill="#fef3c7" stroke="#fbbf24" id="svg_6"/>
+   <text x="344.54615" y="88.43137" text-anchor="middle" font-size="13" fill="#92400e" id="svg_7">Feed Domain</text>
+   <text x="344.54615" y="108.43137" text-anchor="middle" font-size="11" fill="#92400e" id="svg_8">ranking, feed assembly</text>
+   <rect x="516.22095" y="52.43137" width="188" height="96" rx="14" fill="#dcfce7" stroke="#4ade80" id="svg_9"/>
+   <text x="610.22095" y="88.43137" text-anchor="middle" font-size="13" fill="#166534" id="svg_10">Notification Domain</text>
+   <text x="610.22095" y="108.43137" text-anchor="middle" font-size="11" fill="#166534" id="svg_11">email, push, async jobs</text>
+   <path stroke="#475569" d="m203.77902,100.43137l42.78539,0" stroke-width="3" marker-end="url(#arrow)" id="svg_12"/>
+   <text x="226.54158" y="90.43137" text-anchor="middle" font-size="10" fill="#334155" id="svg_13">1) API call</text>
+   <path stroke="#475569" d="m438.54615,100.43137l72.92683,0" stroke-width="3" marker-end="url(#arrow)" id="svg_14"/>
+   <text x="476.47298" y="90.43137" text-anchor="middle" font-size="10" fill="#334155" id="svg_15">2) publish event</text>
+   <path stroke="#475569" d="m438.54615,130.43137c59.59941,52.41966 130.93717,63.63917 171.51219,20.9566" stroke-width="3" fill="none" marker-end="url(#arrow)" id="svg_16"/>
+   <text x="527.96078" y="193.40698" text-anchor="middle" font-size="10" fill="#334155" id="svg_17">async handoff, independent deployability</text>
+  </g>
+ </g>
+</svg>

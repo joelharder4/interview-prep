@@ -1,0 +1,26 @@
+<svg width="720" height="250" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker orient="auto-start-reverse" refY="5" refX="7.5" viewBox="0 0 10 10" markerHeight="6" markerWidth="6" id="arrow">
+   <path id="svg_1" fill="#475569" d="m0,0l10,5l-10,5l0,-10z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <text id="svg_2" fill="#334155" font-size="12" text-anchor="middle" y="24" x="360">Clockwise loop: detect with metrics, diagnose with logs, verify path with tracing.</text>
+  <circle id="svg_3" stroke="#60a5fa" fill="#dbeafe" r="54" cy="148.82051" cx="176"/>
+  <text id="svg_4" fill="#1e3a8a" font-size="13" text-anchor="middle" y="142.82051" x="176">Metrics</text>
+  <text id="svg_5" fill="#1e3a8a" font-size="11" text-anchor="middle" y="160.82051" x="176">signals</text>
+  <circle id="svg_6" stroke="#4ade80" fill="#dcfce7" r="54" cy="94.82051" cx="360"/>
+  <text id="svg_7" fill="#166534" font-size="13" text-anchor="middle" y="88.82051" x="360">Logs</text>
+  <text id="svg_8" fill="#166534" font-size="11" text-anchor="middle" y="106.82051" x="360">details</text>
+  <circle id="svg_9" stroke="#fbbf24" fill="#fef3c7" r="54" cy="148.82051" cx="544"/>
+  <text id="svg_10" fill="#92400e" font-size="13" text-anchor="middle" y="142.82051" x="544">Tracing</text>
+  <text id="svg_11" fill="#92400e" font-size="11" text-anchor="middle" y="160.82051" x="544">request path</text>
+  <path id="svg_12" marker-end="url(#arrow)" fill="none" stroke-width="3" stroke="#475569" d="m224.8547,126.82051c22.18804,-15.31624 49.48719,-32.2906 77.60684,-34.13675"/>
+  <text id="svg_13" fill="#334155" font-size="10" text-anchor="middle" y="97.38461" x="247.05984">1) detect</text>
+  <path id="svg_14" marker-end="url(#arrow)" fill="none" stroke-width="3" stroke="#475569" d="m414.97436,94.82051c32,2 48.32479,8.8718 78.32479,26.8718"/>
+  <text id="svg_15" fill="#334155" font-size="10" text-anchor="middle" y="90.97436" x="464.68376">2) diagnose</text>
+  <path id="svg_16" marker-end="url(#arrow)" fill="none" stroke-width="3" stroke="#475569" d="m496.5812,175.38461c-62,38 -208.17094,40.13675 -270.17094,2.13675"/>
+  <text id="svg_17" fill="#334155" font-size="10" text-anchor="middle" y="230.41025" x="360">3) verify and feed improvements back into alerts and SLOs</text>
+ </g>
+</svg>

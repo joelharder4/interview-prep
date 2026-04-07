@@ -1,0 +1,36 @@
+<svg width="720" height="260" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker orient="auto-start-reverse" refY="5" refX="7.5" viewBox="0 0 10 10" markerHeight="6" markerWidth="6" id="arrow">
+   <path id="svg_1" fill="#475569" d="m0,0l10,5l-10,5l0,-10z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_26" marker-end="url(#arrow)" fill="none" stroke-width="3" stroke="#475569" d="m645.33334,165.70588c-48.07843,48.64706 -210.7451,45.21568 -281.56863,30.03922"/>
+  <text id="svg_2" fill="#334155" font-size="12" text-anchor="middle" y="24" x="360">Solid arrows show request flow. Curved arrow shows async background processing.</text>
+  <rect id="svg_3" stroke="#60a5fa" fill="#dbeafe" rx="14" height="96" width="148" y="87.17647" x="37.13725"/>
+  <text id="svg_4" fill="#1e3a8a" font-size="13" text-anchor="middle" y="123.17647" x="111.13725">Load Balancer</text>
+  <text id="svg_5" fill="#1e3a8a" font-size="11" text-anchor="middle" y="143.17647" x="111.13725">spreads requests</text>
+  <rect id="svg_6" stroke="#4ade80" fill="#dcfce7" rx="14" height="66" width="122" y="65.17647" x="237.13725"/>
+  <text id="svg_7" fill="#166534" font-size="13" text-anchor="middle" y="93.17647" x="298.13725">App A</text>
+  <text id="svg_8" fill="#166534" font-size="11" text-anchor="middle" y="111.17647" x="298.13725">healthy</text>
+  <rect id="svg_9" stroke="#fbbf24" fill="#fef3c7" rx="14" height="66" width="122" y="141.17647" x="237.13725"/>
+  <text id="svg_10" fill="#92400e" font-size="13" text-anchor="middle" y="169.17647" x="298.13725">App B</text>
+  <text id="svg_11" fill="#92400e" font-size="11" text-anchor="middle" y="187.17647" x="298.13725">degraded</text>
+  <rect id="svg_12" stroke="#a78bfa" fill="#ede9fe" rx="14" height="82" width="150" y="95.17647" x="425.13725"/>
+  <text id="svg_13" fill="#5b21b6" font-size="13" text-anchor="middle" y="129.17647" x="500.13725">Queue</text>
+  <text id="svg_14" fill="#5b21b6" font-size="11" text-anchor="middle" y="147.17647" x="500.13725">async jobs</text>
+  <rect id="svg_15" stroke="#4ade80" fill="#dcfce7" rx="14" height="62" width="72" y="105.17647" x="626.86275"/>
+  <text id="svg_16" fill="#166534" font-size="13" text-anchor="middle" y="133.17647" x="662.86275">DB</text>
+  <text id="svg_17" fill="#166534" font-size="11" text-anchor="middle" y="151.17647" x="662.86275">state</text>
+  <path stroke="#475569" id="svg_18" marker-end="url(#arrow)" stroke-width="3" d="m185.13725,107.3404l47.68853,0"/>
+  <text id="svg_19" fill="#334155" font-size="10" text-anchor="middle" y="97.3404" x="207.13725">1a</text>
+  <path stroke="#475569" id="svg_20" marker-end="url(#arrow)" stroke-width="3" d="m185.13725,167.07811l48.5082,0"/>
+  <text id="svg_21" fill="#334155" font-size="10" text-anchor="middle" y="157.07811" x="207.13725">1b</text>
+  <path stroke="#475569" id="svg_22" marker-end="url(#arrow)" stroke-width="3" d="m359.13725,110.61909l61.27868,0"/>
+  <text id="svg_23" fill="#334155" font-size="10" text-anchor="middle" y="100.61909" x="388.13725">2) enqueue</text>
+  <path stroke="#475569" id="svg_24" marker-end="url(#arrow)" stroke-width="3" d="m575.13725,135.17647l46.66667,0"/>
+  <text id="svg_25" fill="#334155" font-size="10" text-anchor="middle" y="123.70588" x="598.96078">3) persist</text>
+  <text id="svg_27" fill="#334155" font-size="10" text-anchor="middle" y="225.03921" x="514.54903">worker retry and recovery happens off the request path</text>
+ </g>
+</svg>

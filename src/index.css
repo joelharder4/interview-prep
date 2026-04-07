@@ -102,3 +102,23 @@ a {
   outline: 3px solid color-mix(in srgb, var(--accent) 45%, white);
   outline-offset: 2px;
 }
+
+.problem-editor-highlighter,
+.problem-editor-highlighter pre,
+.problem-editor-highlighter code {
+  font-family: Consolas, monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+  font-variant-ligatures: none !important;
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
+}
+
+.problem-editor-highlighter pre {
+  margin: 0 !important;
+  padding: 1rem !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
