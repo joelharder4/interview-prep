@@ -1,5 +1,9 @@
 # React + TypeScript + Vite
 
+This project now includes a local execution backend for the coding playground. Run the frontend with `npm run dev` and the backend with `npm run dev:backend` from the repo root. The backend listens on `http://127.0.0.1:3333` and the Vite dev server proxies `/api` to it.
+
+Python execution uses the local interpreter configured through `PYTHON_EXECUTABLE` when that environment variable is set, otherwise it falls back to `python`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

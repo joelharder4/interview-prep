@@ -14,6 +14,7 @@ export type JavaScriptProblem = {
   title: string
   difficulty: 'Easy' | 'Medium' | 'Hard'
   category: 'Array Manipulation' | 'String Handling' | 'Object Handling' | 'Function Challenge'
+  argumentMode?: 'single' | 'spread'
   description: string
   constraints: string[]
   hints: {
@@ -171,6 +172,7 @@ export const javascriptProblems: JavaScriptProblem[] = [
     title: 'Merge Two Objects',
     difficulty: 'Medium',
     category: 'Object Handling',
+    argumentMode: 'spread',
     description: 'Write a function that merges two objects. If keys overlap, the second object\'s values should take precedence. Return a new object without modifying the inputs.',
     constraints: [
       'Return a new object (do not mutate inputs)',

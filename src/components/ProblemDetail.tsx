@@ -3,8 +3,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import type { JavaScriptProblem } from '../data/javascript-problems'
 import TestHarness from './TestHarness'
-import { evaluateUserCode } from '../utils/javascript-sandbox'
 import type { TestHarnessResults } from './TestHarness'
+import { runJavaScriptProblemTests } from '../utils/code-runner'
 
 type ViewMode = 'solve' | 'solution'
 
@@ -175,14 +175,7 @@ export default function ProblemDetail({ problem, onBack }: ProblemDetailProps) {
   const handleRunTests = async () => {
     setIsRunning(true)
     try {
-      // Extract function name based on problem
-      let funcName = 'solve'
-      if (problem.id === 'reverse-array') funcName = 'reverseArray'
-      if (problem.id === 'count-unique-chars') funcName = 'countUniqueChars'
-      if (problem.id === 'merge-objects') funcName = 'mergeObjects'
-      if (problem.id === 'filter-and-transform') funcName = 'filterAndTransform'
-
-      const results = evaluateUserCode(userCode, problem.testCases, funcName)
+      const results = await runJavaScriptProblemTests(problem, userCode)
       setTestResults(results)
     } catch (error) {
       setTestResults({
@@ -325,7 +318,7 @@ export default function ProblemDetail({ problem, onBack }: ProblemDetailProps) {
             <section className="surface-card p-5 rounded-[18px] border border-slate-200 space-y-4">
               <div>
                 <label className="block text-sm font-semibold text-slate-900 mb-2">Your Solution</label>
-                <div className="relative min-h-[28rem] overflow-hidden rounded-lg border border-slate-200 bg-slate-900 lg:min-h-[36rem] xl:min-h-[42rem]">
+                <div className="relative min-h-112 overflow-hidden rounded-lg border border-slate-200 bg-slate-900 lg:min-h-144 xl:min-h-168">
                   <div ref={highlightRef} aria-hidden="true" className="absolute inset-0 overflow-auto pointer-events-none problem-editor-highlighter">
                     <SyntaxHighlighter
                       language="javascript"
@@ -403,7 +396,7 @@ export default function ProblemDetail({ problem, onBack }: ProblemDetailProps) {
                 <div>
                   <h2 className="font-semibold text-slate-900 text-lg mb-2">Optimal Solution</h2>
                   <p className="text-xs text-slate-600 mb-4">{problem.fullSolution.explanation}</p>
-                  <SyntaxHighlighter language="javascript" style={atomOneDark} wrapLongLines className="rounded-lg !p-4 text-xs !m-0">
+                  <SyntaxHighlighter language="javascript" style={atomOneDark} wrapLongLines className="rounded-lg p-4! text-xs m-0!">
                     {problem.fullSolution.code}
                   </SyntaxHighlighter>
                 </div>

@@ -22,7 +22,8 @@ interface TestResultSet {
 export function evaluateUserCode(
   userCode: string,
   testCases: TestCase[],
-  functionName: string
+  functionName: string,
+  spreadArguments = false
 ): TestResultSet {
   try {
     // Create a new Function from user code
@@ -65,7 +66,11 @@ export function evaluateUserCode(
 
         // Execute function with timeout
         try {
-          actualOutput = executeWithTimeout(solve as (arg: unknown) => unknown, testCase.input)
+          actualOutput = executeWithTimeout(
+            solve as (...args: unknown[]) => unknown,
+            testCase.input,
+            spreadArguments
+          )
         } catch {
           return {
             passed: false,
@@ -110,45 +115,25 @@ export function evaluateUserCode(
  * Execute function with timeout protection
  */
 function executeWithTimeout(
-  fn: (arg: unknown) => unknown,
-  input: unknown
+  fn: (...args: unknown[]) => unknown,
+  input: unknown,
+  spreadArguments = false
 ): unknown {
-  let completed = false
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let result: any
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let error: any
 
   try {
-    // For simple cases, just execute
-    // For array problems, pass array directly
-    if (Array.isArray(input)) {
-      // Create a copy so we don't mutate during testing
-      const inputCopy = JSON.parse(JSON.stringify(input))
-      result = fn(inputCopy)
-    } else if (typeof input === 'object' && input !== null) {
-      // For object inputs, deep copy
-      const inputCopy = JSON.parse(JSON.stringify(input))
-      
-      // Check if it's two separate arguments (for mergeObjects)
-      if (Array.isArray(inputCopy)) {
-        // Cast to unknown array type to allow spread
-        result = (fn as (...args: unknown[]) => unknown)(...(inputCopy as unknown[]))
-      } else {
-        result = fn(inputCopy)
-      }
+    const inputCopy = JSON.parse(JSON.stringify(input))
+
+    if (spreadArguments && Array.isArray(inputCopy)) {
+      result = fn(...inputCopy)
     } else {
-      // For primitives (strings, numbers)
-      result = fn(input)
+      result = fn(inputCopy)
     }
-    completed = true
   } catch (e) {
     error = e
-    completed = true
-  }
-
-  if (!completed) {
-    throw new Error('Function execution exceeded timeout')
   }
 
   if (error) {
